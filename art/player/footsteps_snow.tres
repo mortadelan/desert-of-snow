@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://boj4exiqq7shk"]
+
+[ext_resource type="AudioStream" uid="uid://dh0cqli3e7brh" path="res://art/player/footstep_snow1.ogg" id="1_ju07r"]
+[ext_resource type="AudioStream" uid="uid://c0ss51kds36kb" path="res://art/player/footstep_snow2.ogg" id="2_aunyg"]
+
+[resource]
+random_pitch = 1.1892071
+random_volume_offset_db = 3.0
+streams_count = 2
+stream_0/stream = ExtResource("1_ju07r")
+stream_1/stream = ExtResource("2_aunyg")

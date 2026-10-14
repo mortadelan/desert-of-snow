@@ -1,17 +1,9 @@
 [gd_scene format=3 uid="uid://bbttf4aa310n6"]
 
 [ext_resource type="Script" uid="uid://bw1hxle5qxt2c" path="res://scripts/player/player.gd" id="1_g2els"]
-[ext_resource type="AudioStream" uid="uid://dh0cqli3e7brh" path="res://art/player/blah.ogg" id="2_p47bc"]
+[ext_resource type="AudioStream" uid="uid://boj4exiqq7shk" path="res://art/player/footsteps_snow.tres" id="2_lvxji"]
 [ext_resource type="Script" uid="uid://5d8ejsnhpneh" path="res://scripts/player/camera.gd" id="2_qhqgy"]
-[ext_resource type="AudioStream" uid="uid://c0ss51kds36kb" path="res://art/player/blah2.ogg" id="3_75vfm"]
 [ext_resource type="PackedScene" uid="uid://c2rmoqmqevqb7" path="res://scenes/player/flashligght.tscn" id="3_qhqgy"]
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3prw8"]
-random_pitch = 1.1892071
-random_volume_offset_db = 3.0
-streams_count = 2
-stream_0/stream = ExtResource("2_p47bc")
-stream_1/stream = ExtResource("3_75vfm")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3prw8"]
 
@@ -19,7 +11,7 @@ stream_1/stream = ExtResource("3_75vfm")
 script = ExtResource("1_g2els")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=826894561]
-stream = SubResource("AudioStreamRandomizer_3prw8")
+stream = ExtResource("2_lvxji")
 volume_db = -45.0
 max_distance = 2000.37
 

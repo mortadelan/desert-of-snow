@@ -4,11 +4,16 @@ extends CharacterBody3D
 @export var initial_state = State.WALK
 @export var menu_mode : bool = true
 
+var footsteps_snow = preload("res://art/player/footsteps_snow.tres")
+var footsteps_hard
+
 @onready var cam = $Camera3D
 @onready var flashlight = $Camera3D/flashligght
 @onready var audio : AudioStreamPlayer3D = $AudioStreamPlayer3D
 @onready var footstep_timer = $FootstepTimer
-@onready var hud = await Overlord.get_hud()
+
+var hud : Node
+var level : Node
 
 const FOOTSTEP_INTERVAL = 0.4
 
@@ -17,7 +22,11 @@ var current_state = initial_state
 var last_state = current_state
 
 func _ready():
-	Overlord._on_player_check_in(get_node("../player"))
+	hud = await Overlord.get_hud()
+	level = await Overlord.get_level()
+	Overlord._on_player_check_in(self)
+	if level.floor_type == level.Floor.SNOW:
+		audio.stream = footsteps_snow
 
 func _physics_process(_delta):
 	if menu_mode == false:
