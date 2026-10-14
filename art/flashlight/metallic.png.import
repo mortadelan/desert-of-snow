@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvmhtnr6kgua2"
-path.s3tc="res://.godot/imported/snow.png-2fd4d063d668fbde6061bf1c47e50e3b.s3tc.ctex"
+uid="uid://drn3feu7xncst"
+path.s3tc="res://.godot/imported/metallic.png-7dfe00e50ff8b12fa1a88d57e78dbbbc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://art/snow.png"
-dest_files=["res://.godot/imported/snow.png-2fd4d063d668fbde6061bf1c47e50e3b.s3tc.ctex"]
+source_file="res://art/flashlight/metallic.png"
+dest_files=["res://.godot/imported/metallic.png-7dfe00e50ff8b12fa1a88d57e78dbbbc.s3tc.ctex"]
 
 [params]
 

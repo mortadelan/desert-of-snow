@@ -1,8 +1,8 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://bglno1ijy8m78"]
 
-[ext_resource type="Texture2D" uid="uid://cvmhtnr6kgua2" path="res://art/snow.png" id="1_0lkh5"]
-[ext_resource type="Texture2D" uid="uid://1iyd2ho8renk" path="res://art/snow_fried.png" id="2_kf24b"]
-[ext_resource type="Texture2D" uid="uid://drn6ljcr060jb" path="res://art/snow_dark.png" id="3_26kxf"]
+[ext_resource type="Texture2D" uid="uid://cvmhtnr6kgua2" path="res://art/snow/snow.png" id="1_0lkh5"]
+[ext_resource type="Texture2D" uid="uid://1iyd2ho8renk" path="res://art/snow/snow_fried.png" id="2_kf24b"]
+[ext_resource type="Texture2D" uid="uid://drn6ljcr060jb" path="res://art/snow/snow_dark.png" id="3_26kxf"]
 
 [resource]
 shading_mode = 2

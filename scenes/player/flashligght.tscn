@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c2rmoqmqevqb7"]
+
+[ext_resource type="PackedScene" uid="uid://bq708iris5o0l" path="res://art/flashlight/flashligght.gltf" id="1_878qb"]
+[ext_resource type="Script" uid="uid://kigffdgjjwq7" path="res://scripts/player/flashligght.gd" id="2_7mmcv"]
+[ext_resource type="ArrayMesh" uid="uid://bmhqj0qudtptc" path="res://art/flashlight/flashligght.tres" id="3_ayh84"]
+
+[node name="flashligght" unique_id=893484318 instance=ExtResource("1_878qb")]
+script = ExtResource("2_7mmcv")
+
+[node name="Mesh" parent="." index="0" unique_id=1668237539]
+mesh = ExtResource("3_ayh84")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="1" unique_id=339253576]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.076088, 0, 0)
+light_energy = 9.28
+light_size = 20.0
+light_bake_mode = 0
+spot_range = 68.04194
+spot_angle = 17.81811

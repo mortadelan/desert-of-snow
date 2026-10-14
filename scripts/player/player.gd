@@ -6,7 +6,11 @@ extends CharacterBody3D
 
 @onready var cam = $Camera3D
 @onready var flashlight = $Camera3D/flashligght
+@onready var audio : AudioStreamPlayer3D = $AudioStreamPlayer3D
+@onready var footstep_timer = $FootstepTimer
 @onready var hud = await Overlord.get_hud()
+
+const FOOTSTEP_INTERVAL = 0.4
 
 enum State { WALK, RUN, LOAD }
 var current_state = initial_state
@@ -18,13 +22,16 @@ func _ready():
 func _physics_process(_delta):
 	if menu_mode == false:
 		var input_direction = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-		var direction = (cam.transform.basis * Vector3(input_direction.x, 0, input_direction.y)).normalized()
+		var direction = (cam.transform.basis * \
+		  Vector3(input_direction.x, 0, input_direction.y)).normalized()
 		if not self.is_on_floor():
 			velocity.y += -2.0
 		velocity.x = direction.x * walk_speed
 		velocity.z = direction.z * walk_speed
-		#	if velocity != Vector3.ZERO:
-		#		body.rotation.y = move_toward(body.rotation.y, (cam.rotation.y + TAU / 4), 0.1)
+		if abs(velocity.x) > 0.01 and abs(velocity.z) > 0.01:
+			if footstep_timer.is_stopped():
+				audio.play()
+				footstep_timer.start(FOOTSTEP_INTERVAL)
 		move_and_slide()
 
 func _unhandled_key_input(event):

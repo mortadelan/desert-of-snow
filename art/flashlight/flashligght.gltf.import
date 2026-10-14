@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bq708iris5o0l"
-path="res://.godot/imported/flashligght.gltf-d479f0f4395d642da425b8edb1a5d0b3.scn"
+path="res://.godot/imported/flashligght.gltf-1ce0ea9bb05d40669471ce32f93750bd.scn"
 
 [deps]
 
-source_file="res://art/flashligght.gltf"
-dest_files=["res://.godot/imported/flashligght.gltf-d479f0f4395d642da425b8edb1a5d0b3.scn"]
+source_file="res://art/flashlight/flashligght.gltf"
+dest_files=["res://.godot/imported/flashligght.gltf-1ce0ea9bb05d40669471ce32f93750bd.scn"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://crjgdh2s13hfn"]
 
-[ext_resource type="Material" uid="uid://c6ax7r2ecybgl" path="res://art/snow.tres" id="1_ackni"]
+[ext_resource type="Material" uid="uid://c6ax7r2ecybgl" path="res://art/snow/snow.tres" id="1_ackni"]
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" unique_id=1587259399]
 

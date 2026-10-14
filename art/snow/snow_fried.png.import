@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnnqdesmtlu8f"
-path.s3tc="res://.godot/imported/flashligght.png-193d4ba815b17c0cbe913b9b8bf943a9.s3tc.ctex"
+uid="uid://1iyd2ho8renk"
+path.s3tc="res://.godot/imported/snow_fried.png-c59c7bc534dfdb7856f2df28847db7b7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://art/flashligght.png"
-dest_files=["res://.godot/imported/flashligght.png-193d4ba815b17c0cbe913b9b8bf943a9.s3tc.ctex"]
+source_file="res://art/snow/snow_fried.png"
+dest_files=["res://.godot/imported/snow_fried.png-c59c7bc534dfdb7856f2df28847db7b7.s3tc.ctex"]
 
 [params]
 

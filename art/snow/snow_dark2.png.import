@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1iyd2ho8renk"
-path.s3tc="res://.godot/imported/snow_fried.png-ae98bc2a14fb9450b77669aa99cb097e.s3tc.ctex"
+uid="uid://ds5moto2yojkv"
+path.s3tc="res://.godot/imported/snow_dark2.png-f04c4f55ac6533b152d934b6ed7d34c4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://art/snow_fried.png"
-dest_files=["res://.godot/imported/snow_fried.png-ae98bc2a14fb9450b77669aa99cb097e.s3tc.ctex"]
+source_file="res://art/snow/snow_dark2.png"
+dest_files=["res://.godot/imported/snow_dark2.png-f04c4f55ac6533b152d934b6ed7d34c4.s3tc.ctex"]
 
 [params]
 

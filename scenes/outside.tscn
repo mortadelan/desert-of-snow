@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://8p2rggqksepc"]
 
-[ext_resource type="Material" uid="uid://bglno1ijy8m78" path="res://art/snow_floor.tres" id="1_8lkp2"]
+[ext_resource type="Material" uid="uid://bglno1ijy8m78" path="res://art/snow/snow_floor.tres" id="1_8lkp2"]
 [ext_resource type="Script" uid="uid://csu3vkb1axxq6" path="res://scripts/snow.gd" id="2_udpx5"]
-[ext_resource type="Material" uid="uid://c6ax7r2ecybgl" path="res://art/snow.tres" id="3_7r1kg"]
+[ext_resource type="Material" uid="uid://c6ax7r2ecybgl" path="res://art/snow/snow.tres" id="3_7r1kg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_top_color = Color(0.77319354, 0.8152873, 0.8717406, 1)
