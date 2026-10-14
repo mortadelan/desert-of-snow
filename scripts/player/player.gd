@@ -14,6 +14,7 @@ var footsteps_hard
 
 var hud : Node
 var level : Node
+var scene_changer : Node
 
 const FOOTSTEP_INTERVAL = 0.4
 
@@ -23,8 +24,13 @@ var last_state = current_state
 
 func _ready():
 	hud = await Overlord.get_hud()
-	level = await Overlord.get_level()
+	_on_level_changed(await Overlord.get_level())
 	Overlord._on_player_check_in(self)
+	scene_changer = await Overlord.get_scene_changer()
+	scene_changer.connect("level_changed", _on_level_changed)
+
+func _on_level_changed(new_level):
+	level = new_level
 	if level.floor_type == level.Floor.SNOW:
 		audio.stream = footsteps_snow
 
