@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://da57dkarqbdah"]
+
+[ext_resource type="Script" uid="uid://vw685umlmif1" path="res://scripts/hud.gd" id="1_ahhtf"]
+
+[sub_resource type="Theme" id="Theme_71j4m"]
+FlatButton/font_sizes/font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_71j4m"]
+font_size = 52
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
+
+[node name="HUD" type="Control" unique_id=105442634]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_71j4m")
+script = ExtResource("1_ahhtf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1639445157]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.14901961)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=741112590]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=361650839]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1582278896]
+layout_mode = 2
+size_flags_vertical = 7
+text = "Desert of Snow"
+label_settings = SubResource("LabelSettings_71j4m")
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1564900868]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+text = "Start"
+flat = true
+
+[node name="OptionsButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=934828751]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+text = "Options"
+flat = true
+
+[node name="ExitButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1036872530]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+text = "Exit"
+flat = true
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
