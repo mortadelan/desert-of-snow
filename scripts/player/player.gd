@@ -5,7 +5,7 @@ extends CharacterBody3D
 @export var menu_mode : bool = true
 
 var footsteps_snow = preload("res://art/player/footsteps_snow.tres")
-var footsteps_hard
+var footsteps_hard = preload("res://art/player/footsteps_hard.tres")
 
 @onready var pivot = $pivot
 @onready var cam = $pivot/Camera3D
@@ -34,6 +34,10 @@ func _on_level_changed(new_level):
 	level = new_level
 	if level.floor_type == level.Floor.SNOW:
 		audio.stream = footsteps_snow
+		audio.volume_db = -45.0
+	elif level.floor_type == level.Floor.HARD:
+		audio.stream = footsteps_hard
+		audio.volume_db = 0.0
 
 func _physics_process(_delta):
 	if menu_mode == false:

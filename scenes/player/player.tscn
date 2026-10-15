@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bbttf4aa310n6"]
 
 [ext_resource type="Script" uid="uid://bw1hxle5qxt2c" path="res://scripts/player/player.gd" id="1_g2els"]
-[ext_resource type="AudioStream" uid="uid://boj4exiqq7shk" path="res://art/player/footsteps_snow.tres" id="2_lvxji"]
 [ext_resource type="Script" uid="uid://5d8ejsnhpneh" path="res://scripts/player/camera.gd" id="2_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://c2rmoqmqevqb7" path="res://scenes/player/flashligght.tscn" id="3_qhqgy"]
 
@@ -11,9 +10,8 @@
 script = ExtResource("1_g2els")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=826894561]
-stream = ExtResource("2_lvxji")
 volume_db = -45.0
-max_distance = 2000.37
+max_distance = 2000.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1237547270]
 shape = SubResource("CapsuleShape3D_3prw8")

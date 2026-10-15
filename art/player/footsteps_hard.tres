@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://b26q0bqxglv5e"]
+
+[ext_resource type="AudioStream" uid="uid://cnpmapmwxk5gl" path="res://art/player/footstep_hard_reverb1.ogg" id="1_bq503"]
+[ext_resource type="AudioStream" uid="uid://b2fu2c6xr33ox" path="res://art/player/footstep_hard_reverb2.ogg" id="2_bv4tn"]
+
+[resource]
+random_pitch = 1.1892071
+random_volume_offset_db = 3.0
+streams_count = 2
+stream_0/stream = ExtResource("1_bq503")
+stream_1/stream = ExtResource("2_bv4tn")
