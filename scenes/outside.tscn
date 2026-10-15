@@ -180,7 +180,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44604492, 2.0644226, 1.168
 shape = SubResource("BoxShape3D_lt7nq")
 
 [node name="door_mesh" parent="level_geometry/THEdoor" unique_id=1290277933 instance=ExtResource("5_7r1kg")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.8483701, 1.2450867)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level_geometry/THEdoor" unique_id=1556674289]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0032958984, 2.0629272, 1.1680298)
@@ -191,7 +191,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 8.96908e-09, 0.99472326, -0.102594
 shape = SubResource("BoxShape3D_lt5my")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="level_geometry/THEdoor" unique_id=1782175874]
-transform = Transform3D(-0.9999982, 0.00096360117, 0.0016278268, 0.0015567598, -0.069648035, 0.99757046, 0.0010746372, 0.99757123, 0.06964641, -0.25551987, 4.875455, 1.1038132)
+transform = Transform3D(-0.9999982, 0.00096360117, 0.0016278268, 0.0015567598, -0.069648035, 0.99757046, 0.0010746372, 0.99757123, 0.06964641, -0.25551987, 4.489027, 1.1038132)
 shape = SubResource("BoxShape3D_kg0bm")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="level_geometry/THEdoor" unique_id=950160]
