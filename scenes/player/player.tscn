@@ -18,11 +18,13 @@ max_distance = 2000.37
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1237547270]
 shape = SubResource("CapsuleShape3D_3prw8")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=585950912]
+[node name="pivot" type="Node3D" parent="." unique_id=7804473]
+
+[node name="Camera3D" type="Camera3D" parent="pivot" unique_id=585950912]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 script = ExtResource("2_qhqgy")
 
-[node name="flashligght" parent="Camera3D" unique_id=893484318 instance=ExtResource("3_qhqgy")]
+[node name="flashligght" parent="pivot/Camera3D" unique_id=893484318 instance=ExtResource("3_qhqgy")]
 transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, 0.37980086, -0.27349806, -0.7115238)
 
 [node name="FootstepTimer" type="Timer" parent="." unique_id=226036363]

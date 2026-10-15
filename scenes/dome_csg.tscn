@@ -1,17 +1,92 @@
 [gd_scene format=3 uid="uid://crjgdh2s13hfn"]
 
 [ext_resource type="Material" uid="uid://c6ax7r2ecybgl" path="res://art/snow/snow.tres" id="1_ackni"]
+[ext_resource type="Texture2D" uid="uid://cvmhtnr6kgua2" path="res://art/snow/snow.png" id="2_tfvgv"]
+[ext_resource type="Texture2D" uid="uid://1iyd2ho8renk" path="res://art/snow/snow_fried.png" id="3_vaplr"]
+[ext_resource type="Texture2D" uid="uid://drn6ljcr060jb" path="res://art/snow/snow_dark.png" id="4_w28ea"]
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" unique_id=1587259399]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5tstl"]
+shading_mode = 2
+albedo_texture = ExtResource("2_tfvgv")
+metallic = 0.8
+metallic_specular = 1.0
+metallic_texture = ExtResource("3_vaplr")
+refraction_texture = ExtResource("2_tfvgv")
+detail_mask = ExtResource("4_w28ea")
+detail_blend_mode = 3
+detail_albedo = ExtResource("3_vaplr")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+texture_filter = 0
+distance_fade_mode = 2
+distance_fade_max_distance = 1.0
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=897036561]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lt7nq"]
+shading_mode = 2
+albedo_color = Color(0.64329845, 0.6432985, 0.64329845, 1)
+albedo_texture = ExtResource("2_tfvgv")
+metallic = 0.8
+metallic_specular = 1.0
+metallic_texture = ExtResource("3_vaplr")
+refraction_texture = ExtResource("2_tfvgv")
+detail_mask = ExtResource("4_w28ea")
+detail_blend_mode = 3
+detail_albedo = ExtResource("3_vaplr")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+texture_filter = 0
+distance_fade_mode = 2
+distance_fade_max_distance = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdqji"]
+shading_mode = 2
+albedo_texture = ExtResource("2_tfvgv")
+metallic = 0.8
+metallic_specular = 1.0
+metallic_texture = ExtResource("3_vaplr")
+refraction_texture = ExtResource("2_tfvgv")
+detail_mask = ExtResource("4_w28ea")
+detail_blend_mode = 3
+detail_albedo = ExtResource("3_vaplr")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+texture_filter = 0
+distance_fade_mode = 2
+distance_fade_max_distance = 1.0
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" unique_id=2131247314]
+visible = false
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1718377807]
 radius = 50.0
 material = ExtResource("1_ackni")
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=1641181929]
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=903838273]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 38.037476, 0, 0)
 polygon = PackedVector2Array(-36.947468, 1.269949, 1.8974915, 26.871946, 46.455643, 10.622936, 93.649124, 0.9762497)
 mode = 1
 spin_degrees = 360.0
 spin_sides = 8
 material = ExtResource("1_ackni")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=381033116]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -48.205715, 5.0067577, -1.5002518)
+size = Vector3(3.4600372, 11.013515, 13.151697)
+material = ExtResource("1_ackni")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D" unique_id=1840227858]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 2.950901, 0.49603605, 1.6141815)
+operation = 1
+radius = 7.820801
+height = 11.013428
+material = SubResource("StandardMaterial3D_5tstl")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGBox3D" unique_id=1121815080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41554642, -2.6716647, 1.6683578)
+operation = 1
+radius = 2.602539
+height = 9.503784
+material = SubResource("StandardMaterial3D_lt7nq")
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="CSGBox3D/CSGCylinder3D2" unique_id=357153561]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 2.8659935, 1.8840305, -0.2295227)
+radius = 5.643161
+rings = 8
+material = SubResource("StandardMaterial3D_cdqji")

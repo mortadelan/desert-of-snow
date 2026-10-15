@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://vw685umlmif1" path="res://scripts/hud.gd" id="1_ahhtf"]
 
 [sub_resource type="Theme" id="Theme_71j4m"]
+FlatButton/colors/font_color = Color(0, 0, 0, 1)
 FlatButton/font_sizes/font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_71j4m"]

@@ -22,6 +22,7 @@ func spawn_scenes():
 		player = player_scene.instantiate()
 		add_child(player)
 	player.position = current_level.player_pos
+	player.pivot.basis = current_level.cam_basis
 	level_changed.emit(current_level)
 
 func free_level():

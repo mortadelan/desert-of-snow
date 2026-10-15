@@ -9,9 +9,6 @@ var rot_y : float = 0
 
 @onready var player = await Overlord.get_player()
 
-func _ready():
-	rotate_object_local(Vector3.UP, -90.0)
-
 func _unhandled_input(event):
 	if player.menu_mode == false:
 		if event is InputEventMouseMotion:

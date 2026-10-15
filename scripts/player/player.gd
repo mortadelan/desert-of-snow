@@ -7,8 +7,9 @@ extends CharacterBody3D
 var footsteps_snow = preload("res://art/player/footsteps_snow.tres")
 var footsteps_hard
 
-@onready var cam = $Camera3D
-@onready var flashlight = $Camera3D/flashligght
+@onready var pivot = $pivot
+@onready var cam = $pivot/Camera3D
+@onready var flashlight = $pivot/Camera3D/flashligght
 @onready var audio : AudioStreamPlayer3D = $AudioStreamPlayer3D
 @onready var footstep_timer = $FootstepTimer
 
@@ -37,7 +38,7 @@ func _on_level_changed(new_level):
 func _physics_process(_delta):
 	if menu_mode == false:
 		var input_direction = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-		var direction = (cam.transform.basis * \
+		var direction = (cam.transform.basis * pivot.transform.basis * \
 		  Vector3(input_direction.x, 0, input_direction.y)).normalized()
 		if not self.is_on_floor():
 			velocity.y += -2.0
