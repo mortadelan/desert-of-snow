@@ -1,6 +1,6 @@
 extends Area3D
 
-var test_scene = preload("res://test.tscn")
+var test_scene = preload("res://scenes/inside/inside.tscn")
 @onready var anim = $"../AnimationPlayer"
 @onready var vignette = $"../ColorRect"
 var player
