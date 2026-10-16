@@ -67,9 +67,9 @@ func _unhandled_key_input(event):
 		if event.is_action_pressed("switch_flashlight"):
 			flashlight.switch()
 		if event.is_action_pressed("menu_mode"):
-			# another opportunity for an animation, vignette coming down maybe
 			hud.set_visible(true)
 			menu_mode = true
+			get_tree().set_pause(true)
 
 func change_state(to: State = last_state):
 	if to == current_state and to != State.RUN:

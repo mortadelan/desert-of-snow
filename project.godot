@@ -24,6 +24,11 @@ Overlord="*uid://duwgk1ak4sufy"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[editor]
+
+movie_writer/movie_file="/home/raf/git/side-projects/desert-of-snow/demo.ogv"
+movie_writer/fps=30
+
 [input]
 
 move_left={

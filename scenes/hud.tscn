@@ -50,20 +50,15 @@ label_settings = SubResource("LabelSettings_71j4m")
 vertical_alignment = 1
 
 [node name="StartButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1564900868]
+process_mode = 3
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_type_variation = &"FlatButton"
 text = "Start"
 flat = true
 
-[node name="OptionsButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=934828751]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
-theme_type_variation = &"FlatButton"
-text = "Options"
-flat = true
-
 [node name="ExitButton" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1036872530]
+process_mode = 3
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_type_variation = &"FlatButton"
@@ -71,5 +66,4 @@ text = "Exit"
 flat = true
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

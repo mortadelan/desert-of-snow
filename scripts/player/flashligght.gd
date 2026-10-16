@@ -7,6 +7,7 @@ var state : bool = false
 
 func _ready():
 	self.set_visible(false)
+	light.set_visible(false)
 	anim.play_section_with_markers(
 	  "out_and_back", "start_put_back", "end_put_back")
 func switch():
@@ -24,9 +25,9 @@ func pull_out():
 	if self.is_visible():
 		anim.play_section_with_markers(
 		  "out_and_back", "start_put_back", "end_put_back")
+		light.set_visible(false)
 		await anim.animation_finished
 		self.set_visible(false)
-		light.set_visible(false)
 	else:
 		self.set_visible(true)
 		anim.play_section_with_markers(

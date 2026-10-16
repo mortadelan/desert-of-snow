@@ -51,8 +51,11 @@ texture_filter = 0
 distance_fade_mode = 2
 distance_fade_max_distance = 1.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3prw8"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+
 [node name="CSGCombiner3D" type="CSGCombiner3D" unique_id=2131247314]
-visible = false
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1718377807]
 radius = 50.0
@@ -90,3 +93,9 @@ transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 2.8659935, 1.8840305,
 radius = 5.643161
 rings = 8
 material = SubResource("StandardMaterial3D_cdqji")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/CSGCylinder3D2" unique_id=850327887]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -1.7729492, 1.9991574, -0.37861538)
+operation = 2
+size = Vector3(2, 5.052185, 3.6538372)
+material = SubResource("StandardMaterial3D_3prw8")

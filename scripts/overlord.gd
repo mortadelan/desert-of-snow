@@ -10,6 +10,9 @@ var hud : Node
 var level : Node
 var scene_changer : Node
 
+func _ready():
+	set_process_mode(ProcessMode.PROCESS_MODE_ALWAYS)
+
 func _on_player_check_in(check_in : Node):
 	player = check_in
 	player_check_in.emit(player)
