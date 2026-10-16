@@ -3,14 +3,12 @@ extends Node3D
 var state : bool = false
 
 @onready var light = $SpotLight3D
-
-var test_scene = load("res://test.tscn")
-var scene_changer
+@onready var anim = $AnimationPlayer
 
 func _ready():
 	self.set_visible(false)
-	scene_changer = await Overlord.get_scene_changer()
-
+	anim.play_section_with_markers(
+	  "out_and_back", "start_put_back", "end_put_back")
 func switch():
 	# sound effect for flicking on/off?
 	if self.is_visible():
@@ -24,11 +22,16 @@ func pull_out():
 	# maybe a little animation could play aswell, idk
 	# and maybe a sound!
 	if self.is_visible():
+		anim.play_section_with_markers(
+		  "out_and_back", "start_put_back", "end_put_back")
+		await anim.animation_finished
 		self.set_visible(false)
 		light.set_visible(false)
-		scene_changer.change_scene(test_scene)
 	else:
 		self.set_visible(true)
+		anim.play_section_with_markers(
+		  "out_and_back", "start_pull_out", "start_put_back")
+		await anim.animation_finished
 		light.set_visible(state)
 
 # func _physics_process(_delta):

@@ -4,6 +4,80 @@
 [ext_resource type="Script" uid="uid://kigffdgjjwq7" path="res://scripts/player/flashligght.gd" id="2_7mmcv"]
 [ext_resource type="ArrayMesh" uid="uid://bmhqj0qudtptc" path="res://art/flashlight/flashligght.tres" id="3_ayh84"]
 
+[sub_resource type="Animation" id="Animation_7mmcv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mesh:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_878qb"]
+resource_name = "new_animation"
+length = 2.0
+markers = [{
+"color": Color(1, 0, 0, 1),
+"name": &"start_pull_out",
+"time": 0.033333335
+}, {
+"color": Color(0, 0, 1, 1),
+"name": &"start_put_back",
+"time": 0.85
+}, {
+"color": Color(0, 0, 1, 1),
+"name": &"end_put_back",
+"time": 2.0
+}]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.84996665, 1.9999666),
+"transitions": PackedFloat32Array(0.55478466, 1, 0.9999998),
+"update": 0,
+"values": [Vector3(-4.6892247, -7.045532, 0), Vector3(0, 0, 0), Vector3(-4.6892247, -7.045532, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mesh:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5466667, 0.71666664, 0.85, 2),
+"transitions": PackedFloat32Array(2.0705302, 1, 1, 1, 1.8025012),
+"update": 0,
+"values": [Vector3(0, 0, -1.8714845), Vector3(0, 0, 0.21526672), Vector3(0, 0, -0.0715585), Vector3(0, 0, -0.034906585), Vector3(0, 0, -1.8714845)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7mmcv"]
+_data = {
+&"RESET": SubResource("Animation_7mmcv"),
+&"out_and_back": SubResource("Animation_878qb")
+}
+
 [node name="flashligght" unique_id=893484318 instance=ExtResource("1_878qb")]
 script = ExtResource("2_7mmcv")
 
@@ -17,3 +91,7 @@ light_size = 20.0
 light_bake_mode = 0
 spot_range = 68.04194
 spot_angle = 17.81811
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2" unique_id=643342458]
+libraries/ = SubResource("AnimationLibrary_7mmcv")
+autoplay = &"out_and_back"
