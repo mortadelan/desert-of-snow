@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://dmumkmqf1pdvk"
+path="res://.godot/imported/scientifica-11.fnt-023a419499ff455ce4f845aec87937cf.fontdata"
+
+[deps]
+
+source_file="res://art/fonts/fnt/scientifica-11.fnt"
+dest_files=["res://.godot/imported/scientifica-11.fnt-023a419499ff455ce4f845aec87937cf.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

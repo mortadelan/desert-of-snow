@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://bosjvhdxto3b3"]
 
 [ext_resource type="Script" uid="uid://dw53jjcsy8qo2" path="res://scripts/outside/door.gd" id="1_dcamf"]
-[ext_resource type="PackedScene" uid="uid://bofwmfe8t8lh2" path="res://art/doors/door_open.gltf" id="2_3iqtl"]
-[ext_resource type="ArrayMesh" uid="uid://cf37kwbaqo2wp" path="res://art/doors/door_open_mesh.tres" id="3_xyi1k"]
-[ext_resource type="PackedScene" uid="uid://b02vc334jd4al" path="res://art/doors/subdoor.gltf" id="4_3iqtl"]
+[ext_resource type="PackedScene" uid="uid://fl8ft58y80od" path="res://scenes/doors/front_subdoor.tscn" id="2_dcamf"]
+[ext_resource type="PackedScene" uid="uid://jbat2g5b8i7f" path="res://scenes/doors/front_door.tscn" id="5_xyi1k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lt7nq"]
 size = Vector3(1.8920898, 5.128845, 3.664795)
@@ -25,20 +24,20 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("subdoor:rotation")
+tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, -3.1415925, 0)]
+"values": [Color(0, 0, 0, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("subdoor:position")
-tracks/1/interp = 1
+tracks/1/path = NodePath("front_subdoor:position")
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
@@ -49,14 +48,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect:color")
-tracks/2/interp = 1
+tracks/2/path = NodePath("front_subdoor:rotation")
+tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Vector3(0, 3.1415925, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_a2qlm"]
@@ -65,38 +64,38 @@ length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("subdoor:position")
-tracks/0/interp = 2
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.46, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.33280396, -0.63883686, 1.2670372), Vector3(-1.3605831, -0.63883686, 0.91257477), Vector3(-1.5577484, -0.63883686, 0.356048)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("subdoor:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.46, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 3.1415927, 0), Vector3(-0.080297865, 2.204587, -0.029566359), Vector3(-0.112716325, 1.7113034, -0.01590741)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect:color")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.46666667, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("front_subdoor:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4758374, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.33280396, -0.63883686, 1.2670372), Vector3(-1.3966322, -0.63883686, 0.9088278), Vector3(-1.6635287, -0.63883686, 0.24031973)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("front_subdoor:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4758374, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.1415925, 0), Vector3(-0.04386544, 2.1693594, -0.02989901), Vector3(-0.08434111, 1.4756002, -0.06714306)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dv282"]
@@ -134,15 +133,6 @@ shape = SubResource("BoxShape3D_5tstl")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=830818367]
 libraries/ = SubResource("AnimationLibrary_dv282")
 
-[node name="door_open" parent="." unique_id=1024559643 instance=ExtResource("2_3iqtl")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.8692241, 1.2402725)
-
-[node name="Mesh" parent="door_open" index="0" unique_id=360201422]
-mesh = ExtResource("3_xyi1k")
-
-[node name="subdoor" parent="." unique_id=1382271011 instance=ExtResource("4_3iqtl")]
-transform = Transform3D(-1, 0, -1.5099577e-07, 0, 1, 0, 1.509958e-07, 0, -0.9999998, -0.33280396, -0.63883686, 1.2670372)
-
 [node name="ColorRect" type="ColorRect" parent="." unique_id=137572855]
 visible = false
 anchors_preset = 15
@@ -152,6 +142,10 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[connection signal="body_entered" from="door" to="door" method="_on_body_entered"]
+[node name="front_subdoor" parent="." unique_id=1382271011 instance=ExtResource("2_dcamf")]
+transform = Transform3D(-1.0000002, 0, 1.509958e-07, 0, 1.0000004, 0, -1.5099585e-07, 0, -1, -0.33280396, -0.63883686, 1.2670372)
 
-[editable path="door_open"]
+[node name="front_door" parent="." unique_id=942169750 instance=ExtResource("5_xyi1k")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, -0.8692241, 1.2402725)
+
+[connection signal="body_entered" from="door" to="door" method="_on_body_entered"]

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://fl8ft58y80od"]
+
+[ext_resource type="PackedScene" uid="uid://b02vc334jd4al" path="res://art/doors/subdoor.gltf" id="1_mo8n7"]
+
+[node name="front_subdoor" unique_id=1382271011 instance=ExtResource("1_mo8n7")]

@@ -30,3 +30,8 @@ transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.185569
 process_callback = 0
 wait_time = 0.3
 one_shot = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=156053231]
+light_energy = 0.555
+light_indirect_energy = 2.84
+omni_range = 26.15

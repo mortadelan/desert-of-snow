@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://jbat2g5b8i7f"]
-
-[ext_resource type="PackedScene" uid="uid://bofwmfe8t8lh2" path="res://art/doors/door_open.gltf" id="1_5ud4h"]
-[ext_resource type="ArrayMesh" uid="uid://cf37kwbaqo2wp" path="res://art/doors/door_open_mesh.tres" id="2_5ud4h"]
-
-[node name="door_open" unique_id=1024559643 instance=ExtResource("1_5ud4h")]
-
-[node name="Mesh" parent="." index="0" unique_id=360201422]
-mesh = ExtResource("2_5ud4h")

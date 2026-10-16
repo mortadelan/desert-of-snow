@@ -1,13 +1,74 @@
 [gd_scene format=3 uid="uid://da57dkarqbdah"]
 
 [ext_resource type="Script" uid="uid://vw685umlmif1" path="res://scripts/hud.gd" id="1_ahhtf"]
+[ext_resource type="FontFile" uid="uid://d26qynmam4auw" path="res://art/fonts/ttf/scientifica.ttf" id="1_oo0fn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ysmq"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fi6k"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.51000005)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oo0fn"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6fi6k"]
 
 [sub_resource type="Theme" id="Theme_71j4m"]
-FlatButton/colors/font_color = Color(0, 0, 0, 1)
-FlatButton/font_sizes/font_size = 32
+FlatButton/colors/font_color = Color(1, 1, 1, 1)
+FlatButton/colors/font_outline_color = Color(0, 0, 0, 1)
+FlatButton/constants/outline_size = 10
+FlatButton/font_sizes/font_size = 30
+FlatButton/fonts/font = ExtResource("1_oo0fn")
+FlatButton/styles/disabled = SubResource("StyleBoxEmpty_5ysmq")
+FlatButton/styles/hover = SubResource("StyleBoxEmpty_5ysmq")
+FlatButton/styles/normal = SubResource("StyleBoxEmpty_5ysmq")
+FlatButton/styles/pressed = SubResource("StyleBoxFlat_6fi6k")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 60
+Label/fonts/font = ExtResource("1_oo0fn")
+Label/styles/focus = SubResource("StyleBoxFlat_oo0fn")
+Label/styles/normal = SubResource("StyleBoxEmpty_6fi6k")
 
 [sub_resource type="LabelSettings" id="LabelSettings_71j4m"]
-font_size = 52
+font_size = 60
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(2, 2)
 
@@ -35,6 +96,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = 37.0
+offset_right = -77.0
+offset_bottom = -83.0
 grow_horizontal = 2
 grow_vertical = 2
 

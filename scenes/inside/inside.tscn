@@ -2,6 +2,48 @@
 
 [ext_resource type="Script" uid="uid://c84sgd0tj3cl3" path="res://scripts/level.gd" id="1_lo15o"]
 [ext_resource type="MeshLibrary" uid="uid://d0iaxtw3pscck" path="res://art/inside/inside.meshlib" id="1_tac3h"]
+[ext_resource type="FontFile" uid="uid://d26qynmam4auw" path="res://art/fonts/ttf/scientifica.ttf" id="3_0xbrk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3prw8"]
+font = ExtResource("3_0xbrk")
+font_size = 15
+
+[sub_resource type="Animation" id="Animation_lo15o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0xbrk"]
+resource_name = "tip_fade"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:label_settings:font_color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n3lru"]
+_data = {
+&"RESET": SubResource("Animation_lo15o"),
+&"tip_fade": SubResource("Animation_0xbrk")
+}
 
 [node name="inside" type="Node3D" unique_id=409097167]
 script = ExtResource("1_lo15o")
@@ -20,3 +62,24 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=1437353306]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.027, 5.0653796, 0)
+
+[node name="Label" type="Label" parent="." unique_id=1784310656]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -122.5
+offset_top = -132.0
+offset_right = 122.5
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "Press G to pull out your flashlight.
+Press F to turn it on."
+label_settings = SubResource("LabelSettings_3prw8")
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1900942751]
+libraries/ = SubResource("AnimationLibrary_n3lru")
+autoplay = &"tip_fade"

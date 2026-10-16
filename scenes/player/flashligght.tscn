@@ -89,8 +89,8 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.07
 light_energy = 9.28
 light_size = 20.0
 light_bake_mode = 0
-spot_range = 68.04194
-spot_angle = 53.66953
+spot_range = 67.117
+spot_angle = 28.17
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2" unique_id=643342458]
 libraries/ = SubResource("AnimationLibrary_7mmcv")

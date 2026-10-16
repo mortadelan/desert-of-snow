@@ -29,6 +29,13 @@ window/stretch/aspect="expand"
 movie_writer/movie_file="/home/raf/git/side-projects/desert-of-snow/demo.ogv"
 movie_writer/fps=30
 
+[gui]
+
+fonts/dynamic_fonts/use_oversampling=false
+theme/default_font_antialiasing=0
+theme/default_font_hinting=0
+theme/default_font_subpixel_positioning=0
+
 [input]
 
 move_left={
