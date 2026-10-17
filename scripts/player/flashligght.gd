@@ -32,8 +32,8 @@ func pull_out():
 		self.set_visible(true)
 		anim.play_section_with_markers(
 		  "out_and_back", "start_pull_out", "start_put_back")
+		light.set_visible(true)
 		await anim.animation_finished
-		light.set_visible(state)
 
 # func _physics_process(_delta):
 #   jiggle about while moved

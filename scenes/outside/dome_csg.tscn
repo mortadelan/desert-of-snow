@@ -95,7 +95,7 @@ rings = 8
 material = SubResource("StandardMaterial3D_cdqji")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D/CSGCylinder3D2" unique_id=850327887]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -1.7230835, 1.9991574, -0.37861538)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -1.7695618, 1.9991574, -0.37861538)
 operation = 2
-size = Vector3(2.0997314, 5.052185, 3.6538372)
+size = Vector3(2.006775, 5.052185, 3.6538372)
 material = SubResource("StandardMaterial3D_3prw8")

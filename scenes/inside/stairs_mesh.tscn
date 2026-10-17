@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://d1ejflnr22baj"]
+
+[ext_resource type="Material" uid="uid://dyt1wgxbml2so" path="res://art/inside/wall.tres" id="1_hfs5q"]
+
+[node name="CSGBox3D" type="CSGBox3D" unique_id=1569594805]
+size = Vector3(10, 10, 10)
+material = ExtResource("1_hfs5q")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=1700858449]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0.5)
+operation = 2
+size = Vector3(0.5, 1, 1)
+material = ExtResource("1_hfs5q")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D5" unique_id=773924492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 9)
+size = Vector3(11, 1.1, 11)
+material = ExtResource("1_hfs5q")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D5" unique_id=1567090006]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 8)
+size = Vector3(11, 1.1, 11)
+material = ExtResource("1_hfs5q")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D5" unique_id=1183411402]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 7)
+size = Vector3(11, 1.1, 11)
+material = ExtResource("1_hfs5q")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGBox3D5" unique_id=1067257248]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+size = Vector3(11, 1.1, 11)
+material = ExtResource("1_hfs5q")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGBox3D5" unique_id=1938229457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.65, -1.9, 2.5)
+operation = 2
+size = Vector3(4.8, 5, 5)
+material = ExtResource("1_hfs5q")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="." unique_id=1248167909]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5, -0.5)
+operation = 2
+material = ExtResource("1_hfs5q")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGBox3D10" unique_id=1697168253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+size = Vector3(11, 1.1, 11)
+material = ExtResource("1_hfs5q")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGBox3D10" unique_id=124486666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
+size = Vector3(11, 1.1, 11)
+material = ExtResource("1_hfs5q")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGBox3D10" unique_id=965790490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 3)
+size = Vector3(11, 1.1, 11)
+material = ExtResource("1_hfs5q")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGBox3D10" unique_id=358693344]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 2)
+size = Vector3(11, 1.1, 11)
+material = ExtResource("1_hfs5q")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGBox3D10" unique_id=1719635073]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 1)
+size = Vector3(11, 1.1, 11)
+material = ExtResource("1_hfs5q")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1559281938]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 2.5, 0)
+operation = 2
+size = Vector3(5.5, 5.1, 10.5)
+material = ExtResource("1_hfs5q")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1253133824]
+transform = Transform3D(1, 0, 0, 0, 0.7071067, 0.7071067, 0, -0.7071067, 0.7071067, -2.5, 0, 5)
+operation = 2
+size = Vector3(5.5, 5.1, 10.5)
+material = ExtResource("1_hfs5q")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1261919589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -2.75, 0)
+operation = 2
+size = Vector3(5.5, 4.5, 10.5)
+material = ExtResource("1_hfs5q")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=211525486]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -4.5, 0)
+size = Vector3(5, 1, 10)
+material = ExtResource("1_hfs5q")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=1938478822]
+transform = Transform3D(1, 0, 0, 0, 0.7071067, 0.7071067, 0, -0.7071067, 0.7071067, 2.5, -5.922446, 0.92244536)
+operation = 2
+size = Vector3(5.1, 9.2, 6.354)
+material = ExtResource("1_hfs5q")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGBox3D7" unique_id=505837564]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, -0.7071068, 0, 0.7071068, 0.7071068, 0, 4.6388607, -0.38825226)
+size = Vector3(10, 5, 5.0981445)

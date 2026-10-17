@@ -5,9 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://c2rmoqmqevqb7" path="res://scenes/player/flashligght.tscn" id="3_qhqgy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3prw8"]
+radius = 1.0
+height = 2.5
 
 [node name="player" type="CharacterBody3D" unique_id=575907329]
 script = ExtResource("1_g2els")
+key = "lock!"
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=826894561]
 volume_db = -45.0
@@ -25,6 +28,10 @@ script = ExtResource("2_qhqgy")
 
 [node name="flashligght" parent="pivot/Camera3D" unique_id=893484318 instance=ExtResource("3_qhqgy")]
 transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.1855695e-09, 0.37980086, -0.27349806, -0.7115238)
+
+[node name="RayCast3D" type="RayCast3D" parent="pivot/Camera3D" unique_id=200642826]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
+target_position = Vector3(0, 1, -7)
 
 [node name="FootstepTimer" type="Timer" parent="." unique_id=226036363]
 process_callback = 0

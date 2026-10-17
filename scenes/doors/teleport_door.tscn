@@ -1,11 +1,81 @@
 [gd_scene format=3 uid="uid://bosjvhdxto3b3"]
 
 [ext_resource type="Script" uid="uid://dw53jjcsy8qo2" path="res://scripts/outside/door.gd" id="1_dcamf"]
+[ext_resource type="Script" uid="uid://cqc53la6k45rm" path="res://scripts/outside/tip.gd" id="2_3iqtl"]
 [ext_resource type="PackedScene" uid="uid://fl8ft58y80od" path="res://scenes/doors/front_subdoor.tscn" id="2_dcamf"]
+[ext_resource type="FontFile" uid="uid://d26qynmam4auw" path="res://art/fonts/ttf/scientifica.ttf" id="3_xyi1k"]
 [ext_resource type="PackedScene" uid="uid://jbat2g5b8i7f" path="res://scenes/doors/front_door.tscn" id="5_xyi1k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lt7nq"]
-size = Vector3(1.8920898, 5.128845, 3.664795)
+size = Vector3(5.5372314, 5.128845, 3.664795)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3vll8"]
+font = ExtResource("3_xyi1k")
+font_size = 15
+font_color = Color(1, 1, 1, 0)
+outline_size = 10
+outline_color = Color(0, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_lo15o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:label_settings:font_color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:label_settings:outline_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0xbrk"]
+resource_name = "tip_fade"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:label_settings:font_color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:label_settings:outline_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3eo67"]
+_data = {
+&"RESET": SubResource("Animation_lo15o"),
+&"tip_fade": SubResource("Animation_0xbrk")
+}
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yhrt2"]
 size = Vector3(1.0065918, 5.1258545, 3.3360596)
@@ -24,34 +94,22 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
+tracks/0/path = NodePath("front_subdoor:position")
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Vector3(-0.33280396, -0.63883686, 1.2670372)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("front_subdoor:position")
+tracks/1/path = NodePath("front_subdoor:rotation")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.33280396, -0.63883686, 1.2670372)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("front_subdoor:rotation")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -64,34 +122,22 @@ length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
+tracks/0/path = NodePath("front_subdoor:position")
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.46666667, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("front_subdoor:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.4758374, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.33280396, -0.63883686, 1.2670372), Vector3(-1.3966322, -0.63883686, 0.9088278), Vector3(-1.6635287, -0.63883686, 0.24031973)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("front_subdoor:rotation")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("front_subdoor:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.4758374, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
@@ -106,13 +152,33 @@ _data = {
 
 [node name="teleport_door" type="StaticBody3D" unique_id=434284925]
 process_mode = 3
-
-[node name="door" type="Area3D" parent="." unique_id=85737650]
 script = ExtResource("1_dcamf")
 
+[node name="door" type="Area3D" parent="." unique_id=85737650]
+script = ExtResource("2_3iqtl")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="door" unique_id=1621108879]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44604492, 2.0644226, 1.1688232)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2686157, 2.0644226, 1.1688232)
 shape = SubResource("BoxShape3D_lt7nq")
+
+[node name="Label" type="Label" parent="door" unique_id=41583775]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -122.5
+offset_top = -132.0
+offset_right = 122.5
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "Press E to open doors."
+label_settings = SubResource("LabelSettings_3vll8")
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="door" unique_id=1226010195]
+libraries/ = SubResource("AnimationLibrary_3eo67")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=982301577]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0032958984, 2.0629272, 1.1680298)
@@ -132,15 +198,6 @@ shape = SubResource("BoxShape3D_5tstl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=830818367]
 libraries/ = SubResource("AnimationLibrary_dv282")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=137572855]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
 
 [node name="front_subdoor" parent="." unique_id=1382271011 instance=ExtResource("2_dcamf")]
 transform = Transform3D(-1.0000002, 0, 1.509958e-07, 0, 1.0000004, 0, -1.5099585e-07, 0, -1, -0.33280396, -0.63883686, 1.2670372)

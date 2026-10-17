@@ -1,8 +1,10 @@
-extends Area3D
+extends StaticBody3D
 
-var test_scene = preload("res://scenes/inside/inside.tscn")
-@onready var anim = $"../AnimationPlayer"
-@onready var vignette = $"../ColorRect"
+@export var scene = preload("res://scenes/inside/inside.tscn")
+@export var lock : String = ""
+
+@onready var anim = $AnimationPlayer
+
 var player
 var scene_changer
 
@@ -10,12 +12,15 @@ func _ready():
 	player = await Overlord.get_player()
 	scene_changer = await Overlord.get_scene_changer()
 
-func _on_body_entered(body: Node3D):
-	if body == player:
+# func _on_body_entered(body: Node3D):
+# 	if body == player:
+# 		anim.play("open_close")
+
+func unlock(key : String = ""):
+	if key == lock or lock == "":
+		# sound here!!!!
 		anim.play("open_close")
-		vignette.set_visible(true)
-		get_tree().set_pause(true)
 		await anim.animation_finished
-		get_tree().set_pause(false)
-		vignette.set_visible(false)
-		scene_changer.change_scene(test_scene)
+		scene_changer.change_scene(scene)
+	elif key != lock:
+		pass # and here!!!!!

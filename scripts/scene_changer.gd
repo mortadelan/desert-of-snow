@@ -6,6 +6,8 @@ signal level_changed(current_level)
 @export var initial_scene : PackedScene = preload("res://scenes/outside/outside.tscn")
 @export var player_scene : PackedScene = preload("res://scenes/player/player.tscn")
 
+@onready var anim = $AnimationPlayer
+
 var current_scene : PackedScene = initial_scene
 var current_level : Node
 var player : Node
@@ -29,6 +31,11 @@ func free_level():
 	current_level.queue_free()
 
 func change_scene(new_scene : PackedScene):
+	anim.play("vignette")
+	get_tree().set_pause(true)
+	await  anim.animation_finished
+	get_tree().set_pause(false)
 	free_level()
 	current_scene = new_scene
 	spawn_scenes()
+	anim.play_backwards("vignette")

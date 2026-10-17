@@ -3,6 +3,7 @@ extends CharacterBody3D
 @export var walk_speed: float = 15.0
 @export var initial_state = State.WALK
 @export var menu_mode : bool = true
+@export var key : String
 
 var footsteps_snow = preload("res://art/player/footsteps_snow.tres")
 var footsteps_hard = preload("res://art/player/footsteps_hard.tres")
@@ -10,6 +11,7 @@ var footsteps_hard = preload("res://art/player/footsteps_hard.tres")
 @onready var pivot = $pivot
 @onready var cam = $pivot/Camera3D
 @onready var flashlight = $pivot/Camera3D/flashligght
+@onready var raycast = $pivot/Camera3D/RayCast3D
 @onready var audio : AudioStreamPlayer3D = $AudioStreamPlayer3D
 @onready var footstep_timer = $FootstepTimer
 
@@ -62,14 +64,23 @@ func _unhandled_key_input(event):
 		if event.is_action_pressed("run"):
 			change_state(State.RUN)
 			handle_state()
-		if event.is_action_pressed("pull_out_flashlight"):
-			flashlight.pull_out()
 		if event.is_action_pressed("switch_flashlight"):
-			flashlight.switch()
+			flashlight.pull_out()
+#			flashlight.switch()
 		if event.is_action_pressed("menu_mode"):
 			hud.set_visible(true)
 			menu_mode = true
 			get_tree().set_pause(true)
+		if event.is_action_pressed("interact"):
+			open_door()
+
+func open_door():
+	if raycast.is_colliding():
+		var collider = raycast.get_collider()
+		print("blah: ", collider)
+		if collider is StaticBody3D && collider.has_method("unlock"):
+			print("bleh")
+			collider.unlock(key)
 
 func change_state(to: State = last_state):
 	if to == current_state and to != State.RUN:
