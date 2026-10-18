@@ -3,7 +3,7 @@ extends Node3D
 signal scene_changed(current_scene)
 signal level_changed(current_level)
 
-@export var initial_scene : PackedScene = preload("res://scenes/outside/outside.tscn")
+@export var initial_scene : PackedScene = preload("res://scenes/inside/inside.tscn")
 @export var player_scene : PackedScene = preload("res://scenes/player/player.tscn")
 
 @onready var anim = $AnimationPlayer

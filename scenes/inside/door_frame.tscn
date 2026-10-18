@@ -3,6 +3,7 @@
 [ext_resource type="Material" uid="uid://dyt1wgxbml2so" path="res://art/inside/wall.tres" id="1_nvw2f"]
 [ext_resource type="Texture2D" uid="uid://bt1jkanaoall8" path="res://art/inside/wall.png" id="2_egohp"]
 [ext_resource type="ArrayMesh" uid="uid://bbyfkd6vnl412" path="res://art/doors/generic_door_open_mesh.tres" id="3_guynv"]
+[ext_resource type="Texture2D" uid="uid://dpaepgpe0ukj2" path="res://art/inside/floor_normal.png" id="4_egohp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3hyjo"]
 albedo_texture = ExtResource("2_egohp")
@@ -14,6 +15,11 @@ albedo_texture = ExtResource("2_egohp")
 uv1_scale = Vector3(3, 3, 3)
 texture_filter = 0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_guynv"]
+albedo_texture = ExtResource("4_egohp")
+uv1_scale = Vector3(0.857, 0.571, 1)
+texture_filter = 0
+
 [node name="CSGCombiner3D" type="CSGCombiner3D" unique_id=905823300]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1904495360]
@@ -21,7 +27,7 @@ size = Vector3(10, 10, 10)
 material = ExtResource("1_nvw2f")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D" unique_id=818458306]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5927908, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0080451965, -1.5927908, -0.025749207)
 operation = 2
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="CSGBox3D/CSGBox3D2" unique_id=1699465590]
@@ -54,7 +60,12 @@ transform = Transform3D(1, 0, 0, 0, 0.44232112, 0.8968568, 0, -0.8968568, 0.4423
 size = Vector3(2.2661133, 1.0078125, 0.51293945)
 material = ExtResource("1_nvw2f")
 
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D" unique_id=1807618231]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7363949, -5.431849, -0.10774994)
+size = Vector3(3.932911, 1.0078125, 5.6641083)
+material = SubResource("StandardMaterial3D_guynv")
+
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=962588297]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5, 0)
 size = Vector3(10, 1, 10)
-material = ExtResource("1_nvw2f")
+material = SubResource("StandardMaterial3D_guynv")

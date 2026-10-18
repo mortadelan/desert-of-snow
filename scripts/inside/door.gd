@@ -19,10 +19,10 @@ func _ready():
 # 		door_hole.set_deferred("disabled", true)
 
 func unlock(key : String = ""):
-	if key == lock or lock == "" and open == false:
+	if key == lock and open == false:
 		# sound here!!!!
-		anim.play("open")
 		open = true
+		anim.play("open")
 		await anim.animation_finished
 		door_hole.set_deferred("disabled", true)
 	elif key != lock:

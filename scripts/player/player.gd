@@ -3,7 +3,7 @@ extends CharacterBody3D
 @export var walk_speed: float = 15.0
 @export var initial_state = State.WALK
 @export var menu_mode : bool = true
-@export var key : String
+@export var keyring : Array[String]
 
 var footsteps_snow = preload("res://art/player/footsteps_snow.tres")
 var footsteps_hard = preload("res://art/player/footsteps_hard.tres")
@@ -78,9 +78,10 @@ func open_door():
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
 		print("blah: ", collider)
-		if collider is StaticBody3D && collider.has_method("unlock"):
+		if collider.has_method("unlock"):
 			print("bleh")
-			collider.unlock(key)
+			for key in keyring:
+				collider.unlock(key)
 
 func change_state(to: State = last_state):
 	if to == current_state and to != State.RUN:

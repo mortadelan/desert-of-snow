@@ -1,0 +1,21 @@
+{
+  "asset": { "version": "2.0" },
+  "scene": 0,
+  "scenes": [{ "nodes": [0] }],
+  "nodes": [{"mesh":0}],
+  "meshes": [{"primitives":[{"attributes":{"POSITION":0,"TEXCOORD_0":1},"indices":2,"material":0}]}],
+  "materials": [{
+    "name" : "fridge",
+    "pbrMetallicRoughness": {
+      "baseColorTexture": { "index": 0 },
+      "metallicFactor": 0.0,
+      "roughnessFactor": 1.0
+    }
+  }],
+  "samplers": [{ "magFilter": 9728, "minFilter": 9728 }],
+  "textures": [{ "source": 0, "sampler": 0 }],
+  "images": [{ "uri": "fridge.png" }],
+  "accessors": [{"bufferView":0,"byteOffset":0,"componentType":5126,"count":528,"type":"VEC3","min":[0.0284375,-0.00625,-2.24],"max":[5.1681875,8.90375,3.04]},{"bufferView":1,"byteOffset":0,"componentType":5126,"count":528,"type":"VEC2"},{"bufferView":2,"byteOffset":0,"componentType":5123,"count":528,"type":"SCALAR"}],
+  "bufferViews": [{"buffer":0,"byteOffset":0,"byteLength":6336,"target":34962},{"buffer":0,"byteOffset":6336,"byteLength":4224,"target":34962},{"buffer":0,"byteOffset":10560,"byteLength":1056,"target":34963}],
+  "buffers": [{ "uri": "fridge.bin", "byteLength": 11616 }]
+}
