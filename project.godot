@@ -13,7 +13,7 @@ config_version=5
 config/name="desert of snow"
 run/main_scene="uid://uj4ad2dlwjvc"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://0ct83ewsd8o0"
 
 [autoload]
 

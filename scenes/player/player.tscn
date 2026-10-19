@@ -31,6 +31,7 @@ transform = Transform3D(-2.1855695e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.185569
 
 [node name="RayCast3D" type="RayCast3D" parent="pivot/Camera3D" unique_id=200642826]
 target_position = Vector3(0, 0, -7)
+collide_with_areas = true
 
 [node name="FootstepTimer" type="Timer" parent="." unique_id=226036363]
 process_callback = 0

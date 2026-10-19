@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://1iyd2ho8renk" path="res://art/snow/snow_fried.png" id="6_vf1bd"]
 [ext_resource type="Texture2D" uid="uid://drn6ljcr060jb" path="res://art/snow/snow_dark.png" id="7_8uhxc"]
 [ext_resource type="PackedScene" uid="uid://bosjvhdxto3b3" path="res://scenes/doors/teleport_door.tscn" id="8_5i1aa"]
+[ext_resource type="Texture2D" uid="uid://bxemv33l4trji" path="res://art/2026-10-18-085700_477x406_scrot.png" id="8_38d8k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_top_color = Color(0.77319354, 0.8152873, 0.8717406, 1)
@@ -22,6 +23,8 @@ sky_material = SubResource("ProceduralSkyMaterial_0wfyh")
 [sub_resource type="Environment" id="Environment_jyhfs"]
 background_mode = 2
 sky = SubResource("Sky_sugp2")
+ssao_enabled = true
+glow_enabled = true
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_kg0bm"]
 
@@ -132,6 +135,13 @@ _surfaces = [{
 "vertex_data": PackedByteArray("Mb5Hwu+H20A4ZQLAvIxFwnbdBEA4ZQLAMb5Hwmpi+z84ZQLAvIxFwu+H20A4ZQLAvIxFws+uD0DUPii9vIxFwnbdBEA4ZQLAMb5Hwu+H20A4ZQLAvIxFwu+H20A4ZQLAvIxFwnbdBEA4ZQLAvIxFwu+H20A4ZQLAvIxFwu+H20CA5s4/vIxFws+uD0DUPii9Mb5Hwu+H20A4ZQLAvIxFwu+H20CA5s4/vIxFwu+H20A4ZQLAvIxFwstPEkC3biOovIxFwn0lB0CA5s4/vIxFwsyuD0CQPyg9vIxFwstPEkC3biOovIxFws+uD0DUPii9vIxFwu+H20CA5s4/vIxFwstPEkC3biOovIxFwu+H20CA5s4/vIxFwn0lB0CA5s4/vIxFwu+H20CA5s4/Mb5Hwnny/z+A5s4/vIxFwn0lB0CA5s4/Mb5Hwu+H20CA5s4/Mb5Hwnny/z+A5s4/vIxFwu+H20CA5s4/Mb5Hwu+H20A4ZQLAMb5Hwu+H20CA5s4/vIxFwu+H20CA5s4//3//fwAA/7//f/9/AAD/v/9//38AAP+/AAD/f/9/AIAAAP9//38AgAAA/3//fwCA/3//fwAA/7//f/9/AAD/v/9//38AAP+/AAD/f/9/AIAAAP9//38AgAAA/3//fwCA/38AAP//////fwAA//////9/AAD/////AAD/f/9/AIAAAP9//38AgAAA/3//fwCAAAD/f/9/AIAAAP9//38AgAAA/3//fwCAAAD/f/9/AIAAAP9//38AgAAA/3//fwCA/////wAA/7//////AAD/v/////8AAP+//////wAA/7//////AAD/v/////8AAP+//38AAP//////fwAA//////9/AAD/////")
 }]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5mq7"]
+albedo_texture = ExtResource("8_38d8k")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5i1aa"]
+material = SubResource("StandardMaterial3D_s5mq7")
+size = Vector2(4, 5)
+
 [node name="outside" type="Node3D" unique_id=1936950172]
 script = ExtResource("1_5i1aa")
 player_pos = Vector3(-101.867, 2, 0)
@@ -165,6 +175,10 @@ shape = SubResource("ConcavePolygonShape3D_5i1aa")
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="level_geometry/StaticBody3D2" unique_id=302162116]
 mesh = SubResource("ArrayMesh_38d8k")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="level_geometry" unique_id=1399272935]
+transform = Transform3D(0.022687312, -0.9997412, -0.0017453284, -0.013476739, 0.0014397919, -0.99990827, 0.99965173, 0.022708755, -0.013440586, -49.422554, 3.5217762, 99.68671)
+mesh = SubResource("PlaneMesh_5i1aa")
 
 [node name="teleport_door" parent="level_geometry" unique_id=434284925 instance=ExtResource("8_5i1aa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.497395, 1.484206, 98.415016)
