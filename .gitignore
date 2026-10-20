@@ -1,3 +1,17 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+'desert of snow.apple-touch-icon.png'
+'desert of snow.apple-touch-icon.png.import'
+'desert of snow.audio.position.worklet.js'
+'desert of snow.audio.worklet.js'
+index.html
+'desert of snow.icon.png'
+'desert of snow.icon.png.import'
+'desert of snow.js'
+'desert of snow.pck'
+desert of snow.wasm'
+demo.ogv
+demo.mp6
+demo.ogv.uid
+desert_of_snow.zip
